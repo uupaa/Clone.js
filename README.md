@@ -1,7 +1,7 @@
 Clone.js
 =========
 
-Clone.js は Structured Clone の実装です。
+Clone.js is structured-clone implement.
 
 # Install, Setup modules
 
@@ -26,4 +26,8 @@ $ npm test
     test success.
     ok.
 ```
+
+# API Document
+
+https://github.com/uupaa/Clone.js/wiki/Clone
 
