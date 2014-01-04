@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.clone.js",
-  "version":        "0.8.2",
+  "version":        "0.8.3",
   "description":    "Structured clone implement.",
   "url":            "https://github.com/uupaa/Clone.js",
   "keywords":       ["Structured", "clone", "algorithm", "util", "uupaa"],
@@ -10,6 +10,7 @@
   "contributors":   [],
   "devDependencies": {
     "uupaa.help.js": ">= 0.8.1",
+    "uupaa.test.js": ">= 0.8.0",
     "uupaa.task.js": ">= 0.8.0"
   },
   "lib":            "./lib/",

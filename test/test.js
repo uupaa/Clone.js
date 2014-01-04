@@ -1,63 +1,19 @@
-// --- define ----------------------------------------------
-// --- variable --------------------------------------------
-var test = new UnitTest([
+var test = new Test().add([
         testLiteral,
         testObject,
         testSparseArray,
     ]);
 
-if (this.document) { // for Browser
-    test.add(testNode);
-    test.add(testNamedNodeMap);
-    test.add(testCSSStyleDeclaration);
+if (typeof document !== "undefined") { // for Browser
+    test.add([
+        testNode,
+        testNamedNodeMap,
+        testCSSStyleDeclaration,
+    ]);
 }
 
-// --- interface -------------------------------------------
-// --- implement -------------------------------------------
-function _init() {
-    // create <input> buttons.
-    if (typeof document !== "undefined") {
-        test.names().forEach(function(name) {
-            //  <input type="button" onclick="testX()" value="testX()" /> node.
-            document.body.appendChild(
-                _createNode("input", {
-                    type: "button",
-                    value: name + "()",
-                    onclick: name + "()" }));
-        });
-        window.addEventListener("error", function(message, lineno, filename) {
-            document.body.style.backgroundColor = "red";
-        });
-    }
-    // run
-    test.run(function(err) {
-debugger;
-        if (typeof document !== "undefined") {
-            document.body.style.backgroundColor = err ? "red" : "lime";
-        } else {
-            // console color
-            var RED    = '\u001b[31m';
-            var YELLOW = '\u001b[33m';
-            var GREEN  = '\u001b[32m';
-            var CLR    = '\u001b[0m';
+test.run();
 
-            if (err) {
-                console.log(RED + "error." + CLR);
-            } else {
-                console.log(GREEN + "ok." + CLR);
-            }
-        }
-    });
-
-    function _createNode(name, attrs) {
-        var node = document.createElement(name);
-
-        for (var key in attrs) {
-            node.setAttribute(key, attrs[key]);
-        }
-        return node;
-    }
-}
 
 function testLiteral(next) {
 
@@ -190,14 +146,5 @@ function testCSSStyleDeclaration(next) {
     }
     console.log("testCSSStyleDeclaration ng");
     next && next.miss();
-}
-
-// --- export ----------------------------------------------
-
-// --- run ----------------------------------------------
-if (this.self) {
-    this.self.addEventListener("load", _init);
-} else {
-    _init();
 }
 

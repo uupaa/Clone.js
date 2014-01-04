@@ -3,6 +3,10 @@ Clone.js
 
 Clone.js is structured-clone implement.
 
+# API Document
+
+https://github.com/uupaa/Clone.js/wiki/Clone
+
 # Install, Setup modules
 
 ```sh
@@ -26,8 +30,3 @@ $ npm test
     test success.
     ok.
 ```
-
-# API Document
-
-https://github.com/uupaa/Clone.js/wiki/Clone
-
