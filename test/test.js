@@ -4,6 +4,7 @@ var test = new Test().add([
         testSparseArray,
     ]);
 
+
 if (typeof document !== "undefined") { // for Browser
     test.add([
         testNode,
@@ -12,8 +13,12 @@ if (typeof document !== "undefined") { // for Browser
     ]);
 }
 
-test.run();
-
+test.run().worker(function(err, test) {
+    if (!err) {
+        Clone = Clone_;
+        new Test(test).run().worker();
+    }
+});
 
 function testLiteral(next) {
 
