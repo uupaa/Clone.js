@@ -14,7 +14,7 @@ if (typeof document !== "undefined") { // for Browser
 }
 
 test.run().worker(function(err, test) {
-    if (!err) {
+    if (!err && typeof Clone_ !== "undefined") {
         Clone = Clone_;
         new Test(test).run().worker();
     }

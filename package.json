@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.clone.js",
-  "version":        "0.8.4",
+  "version":        "0.8.5",
   "description":    "Structured clone implement.",
   "url":            "https://github.com/uupaa/Clone.js",
   "keywords":       ["Structured", "clone", "algorithm", "util", "uupaa"],
