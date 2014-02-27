@@ -3,33 +3,41 @@ Clone.js
 
 Clone.js is structured-clone implement.
 
-# API Document
+# Document
 
 https://github.com/uupaa/Clone.js/wiki/Clone
 
-# Install, Setup modules
+# Install development dependency tools
 
 ```sh
 $ brew install closure-compiler
+$ brew install node
+$ npm install -g plato
+```
 
+# Clone Repository and Install
+
+```sh
 $ git clone git@github.com:uupaa/Clone.js.git
 $ cd Clone.js
 $ npm install
 ```
 
-# Minify
+# Build and Minify
 
 ```sh
-$ npm start
-
-  or
-
-$ node node_modules/uupaa.minify.js --keep --output ./lib/Clone.min.js ./lib/Clone.js
+$ npm run build
 ```
 
 # Test
 
 ```sh
-$ npm test
+$ npm run test
+```
+
+# Lint
+
+```sh
+$ npm run lint
 ```
 
