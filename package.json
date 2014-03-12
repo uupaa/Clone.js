@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.clone.js",
-  "version":        "0.8.10",
+  "version":        "0.8.11",
   "description":    "Structured clone implement.",
   "url":            "https://github.com/uupaa/Clone.js",
   "keywords":       ["Structured", "clone", "algorithm", "util", "uupaa"],
@@ -10,13 +10,21 @@
   },
   "scripts": {
     "watch":        "node node_modules/uupaa.watch.js --verbose --action build ./lib/Clone.js",
-    "build":        "node node_modules/uupaa.minify.js --keep --output ./lib/Clone.min.js ./lib/Clone.js",
+    "build":        "node node_modules/uupaa.minify.js --keep --option 'formatting pretty_print' --output ./lib/Clone.min.js ./lib/Clone.js",
+    "build-release":"node node_modules/uupaa.minify.js --module all --output ./lib/Clone.min.js",
     "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html",
     "lint":         "plato --title Clone.js --jshint .jshintrc -d lint/plato lib/Clone.js; open lint/plato/index.html"
+  },
+  "build": {
+    "all": { "lib/Clone.js": "" },
+    "node": { },
+    "worker": { },
+    "browser": { }
   },
   "dependencies": {
   },
   "devDependencies": {
+    "uupaa.valid.js":   "",
     "uupaa.help.js":    "",
     "uupaa.task.js":    "",
     "uupaa.test.js":    "",

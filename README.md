@@ -1,43 +1,61 @@
 Clone.js
 =========
 
-Clone.js is structured-clone implement.
+Structured clone implement.
 
 # Document
 
 https://github.com/uupaa/Clone.js/wiki/Clone
 
-# Install development dependency tools
+# How to use
 
-```sh
-$ brew install closure-compiler
-$ brew install node
-$ npm install -g plato
+```js
+<script src="lib/Clone.js">
+<script>
+// for Browser
+console.log( Clone({ a: 1 }) );
+</script>
 ```
 
-# Clone Repository and Install
-
-```sh
-$ git clone git@github.com:uupaa/Clone.js.git
-$ cd Clone.js
-$ npm install
+```js
+// for WebWorkers
+importScripts("lib/Clone.js");
+console.log( Clone({ a: 1 }) );
 ```
 
-# Build and Minify
-
-```sh
-$ npm run build
+```js
+// for Node.js
+var Clone = require("lib/Clone.js");
+console.log( Clone({ a: 1 }) );
 ```
 
-# Test
+# for Developers
 
-```sh
-$ npm run test
-```
+1. Install development dependency tools
 
-# Lint
+    ```sh
+    $ brew install closure-compiler
+    $ brew install node
+    $ npm install -g plato
+    ```
 
-```sh
-$ npm run lint
-```
+2. Clone Repository and Install
+
+    ```sh
+    $ git clone git@github.com:uupaa/Clone.js.git
+    $ cd Clone.js
+    $ npm install
+    ```
+
+3. Build and Minify
+
+    `$ npm run build`
+
+4. Test
+
+    `$ npm run test`
+
+5. Lint
+
+    `$ npm run lint`
 

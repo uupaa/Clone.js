@@ -15,10 +15,10 @@ if (typeof document !== "undefined") { // for Browser
 
 test.run().worker(function(err, test) {
     if (!err && typeof Clone_ !== "undefined") {
-        var undo = Test.swap(Clone, Clone_);
+        var name = Test.swap(Clone, Clone_);
 
         new Test(test).run(function(err, test) {
-            Test.undo(undo);
+            Test.undo(name);
         });
     }
 });
