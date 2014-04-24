@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.clone.js",
-  "version":        "0.8.16",
+  "version":        "0.8.17",
   "description":    "Structured clone implement.",
   "url":            "https://github.com/uupaa/Clone.js",
   "keywords":       ["Structured", "clone", "algorithm", "util", "uupaa", "WebModule"],
@@ -12,19 +12,22 @@
     "watch":        "node node_modules/uupaa.watch.js --verbose --action build",
     "build":        "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty",
     "build-simple": "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty --nowrap --simple",
-    "build-release":"node node_modules/uupaa.minify.js --verbose --strict --module",
+    "build-release":"node node_modules/uupaa.minify.js --verbose --strict --module --pretty",
     "test":         "npm run test-node; npm run test-browser",
+    "test-page":    "node node_modules/uupaa.test.js/bin/TestPage.js --verbose",
     "test-node":    "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js",
     "test-browser": "open test/index.html",
     "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
   "x-build": {
-    "inputs":       ["lib/Clone.js"],
-    "output":       "release/Clone.min.js"
+    "files":        ["lib/Clone.js"],
+    "output":       "release/Clone.min.js",
+    "target":       ["all"]
   },
   "dependencies": {
   },
   "devDependencies": {
+    "uupaa.nodemodule.js": "",
     "uupaa.console.js": "",
     "uupaa.valid.js":   "",
     "uupaa.help.js":    "",
