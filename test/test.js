@@ -1,4 +1,15 @@
-var test = new Test().add([
+var ModuleTest = (function(global) {
+
+var test = new Test({
+        disable:    false,
+        node:       true,
+        browser:    true,
+        worker:     true,
+        button:     true,
+        both:       true,
+        primary:    global["Clone"],
+        secondary:  global["Clone_"],
+    }).add([
         testLiteral,
         testObject,
         testSparseArray,
@@ -13,15 +24,7 @@ if (typeof document !== "undefined") { // for Browser
     ]);
 }
 
-test.run().worker(function(err, test) {
-    if (!err && typeof Clone_ !== "undefined") {
-        var name = Test.swap(Clone, Clone_);
-
-        new Test(test).run(function(err, test) {
-            Test.undo(name);
-        });
-    }
-});
+return test.run().clone();
 
 function testLiteral(next) {
 
@@ -155,4 +158,6 @@ function testCSSStyleDeclaration(next) {
     console.log("testCSSStyleDeclaration ng");
     next && next.miss();
 }
+
+})((this || 0).self || global);
 
