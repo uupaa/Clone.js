@@ -1,14 +1,12 @@
-var ModuleTest = (function(global) {
+var ModuleTestClone = (function(global) {
 
-var test = new Test({
+var test = new Test("Clone", {
         disable:    false,
-        node:       true,
         browser:    true,
         worker:     true,
+        node:       true,
         button:     true,
         both:       true,
-        primary:    global["Clone"],
-        secondary:  global["Clone_"],
     }).add([
         testLiteral,
         testObject,
@@ -33,11 +31,9 @@ function testLiteral(next) {
         Clone("a")      === "a"     &&
         Clone(false)    === false) {
 
-        console.log("testLiteral ok");
         next && next.pass();
         return;
     }
-    console.log("testLiteral ng");
     next && next.miss();
 }
 
@@ -59,11 +55,9 @@ function testObject(next) {
         Clone(array).join(",") === "1,2,3" &&
         Clone(error).message === "hello") {
 
-        console.log("testObject ok");
         next && next.pass();
         return;
     }
-    console.log("testObject ng");
     next && next.miss();
 }
 
@@ -81,11 +75,9 @@ function testSparseArray(next) {
         sparseArray[2] === clonedArray[2] &&
         sparseArray[3] === clonedArray[3]) {
 
-        console.log("testSparseArray ok");
         next && next.pass();
         return;
     }
-    console.log("testSparseArray ng");
     next && next.miss();
 }
 
@@ -104,11 +96,9 @@ function testNode(next) {
         clonedNodeTree.children[0].nodeName === "DIV" &&
         treeImage === "<div><div>hello</div></div>") {
 
-        console.log("testNode ok");
         next && next.pass();
         return;
     }
-    console.log("testNode ng");
     next && next.miss();
 }
 
@@ -123,11 +113,9 @@ function testNamedNodeMap(next) {
     if (node.getAttribute("id") === attr["id"] &&
         node.getAttribute("class") === attr["class"]) {
 
-        console.log("testNamedNodeMap ok");
         next && next.pass();
         return;
     }
-    console.log("testNamedNodeMap ng");
     next && next.miss();
 }
 
@@ -151,11 +139,9 @@ function testCSSStyleDeclaration(next) {
         break;
     }
     if (result) {
-        console.log("testCSSStyleDeclaration ok");
         next && next.pass();
         return;
     }
-    console.log("testCSSStyleDeclaration ng");
     next && next.miss();
 }
 
